@@ -3,13 +3,21 @@ package hello.core.member;
 /*
  * 테스트할때 아래의 Asserrtions를 많이 쓴다.
  */
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig config = new AppConfig();
+        memberService = config.memberService();
+    }
 
     @Test
     public void join() {
