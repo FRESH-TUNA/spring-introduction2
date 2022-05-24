@@ -1,4 +1,4 @@
-package hello.core;
+package hello.core.beanfind;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
